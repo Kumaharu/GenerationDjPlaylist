@@ -20,7 +20,7 @@ class Vector:
             play_number_dict.setdefault(i, value)
         return play_number_dict
 
-    # bpmの遷移回数 例 b_i→b_i+1 120 → 123 #引数はlist型じゃないとダメ、dict型でも動くが結果が全て同じになってしまう
+    # 連続する２曲のbpmの遷移回数 例 b_i→b_i+1 120 → 123 #引数はlist型じゃないとダメ、dict型でも動くが結果が全て同じになってしまう
     def make_freq_list(self,bpm_list):
         i = 0
         bpm_transition = []
@@ -36,6 +36,7 @@ class Vector:
             #         print(dict)
             i += 1
         return (freq_list_dict)
+
 
     # rankb(r)はbpmの遷移回数が多いいものから抽出する. 戻り値は、遷移が多い曲番号リスト。曲番号play_numbers={1: '105→104', 2: '104→105', 3: '105→100'}
     def rankb(self,freq_list, play_numbers):
