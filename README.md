@@ -1,26 +1,26 @@
-Name
+DJの選曲術を取り入れたプレイリスト生成システム
 ====
 
-Overview
 
 ## Description
-
-## Demo
-
-## VS. 
-
-## Requirement
+DJ選曲術を反映させるために，DJセットリストのBPM遷移特徴をより反映しているプレイリストを作成する．
+プレイリストは，任意に選択した楽曲の集合を並び替える事によって行う．楽曲集合は，参考にするDJセットリストと同数とする．
 
 ## Usage
+1.参考DJセットリストと曲IDとその曲が持つBPMを辞書型でセットする
+```
+REFERENCE_PLAYLIST = {0: 105, 1: 103, 2: 105, 3: 105, 4: 104, 5: 104, 6: 104, 7: 104, 8: 105, 9: 101}
 
-## Install
+```
+2.同様に，生成プレイリストも曲IDとその曲が持つBPMを辞書型でセットする
+```
+individual_playlist = {0: 105, 1: 103, 2: 105, 3: 105, 4: 104, 5: 104, 6: 104, 7: 104, 8: 105, 9: 101}
 
-## Contribution
-
-## Licence
-
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
-
-## Author
-
-[tcnksm](https://github.com/tcnksm)
+```
+3.必要に応じて，遺伝的アルゴリズムのパラメータを修正する
+```
+sum_individual_length = 100
+    generation = 2000  # 世代数
+    mutate_rate = 0.3  # 突然変異の確率
+    elite_rate = 0.4  # エリート選択の割合
+ ```
